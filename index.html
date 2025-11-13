@@ -916,10 +916,8 @@
   background: conic-gradient(
     from 0deg,
     rgba(255,255,255,0) 0deg,
-    rgba(255,255,255,0),
-    rgba(255,230,120,0.8) 120deg,
-    rgba(255,255,255,0) 160deg,
-    rgba(255,255,255,0) 360deg
+    rgba(255,230,120,0.8) 120deg, /* esta é a “luz” */
+    rgba(255,255,255,0) 160deg
   );
   animation: girarLuz 5s linear infinite;
   mix-blend-mode: screen;
@@ -929,7 +927,7 @@
 /* Esta camada é o “tampão” que esconde o meio */
 .mascara-centro {
   position: absolute;
-  inset: 5px;              /* controla a espessura da faixa que fica visível */
+  inset: 7px;              /* controla a espessura da faixa que fica visível */
   border-radius: 20px;
   background: #111;        /* mesma cor de fundo do card */
   z-index: 2;
@@ -941,7 +939,7 @@
   position: absolute;
   inset: 0;
   border-radius: 25px;
-  border: 2px solid #d4af37;
+  border: 4px solid #d4af37;
   z-index: 3;
 }
 
@@ -1059,6 +1057,7 @@
 }
 ::-webkit-scrollbar-thumb { animation: scrollPulse 2.6s ease-in-out infinite; }
 </style>
+
 
 
 
