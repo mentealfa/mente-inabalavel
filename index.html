@@ -923,11 +923,21 @@
       padding: 70px 30px;
     }
 
+     /* ====== BORDA DOURADA FIXA ====== */
+    .oferta-box::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 25px;
+      border: 5px solid #d4af37;
+      z-index: 3;
+    }
+
     /* ====== LUZ GIRANDO (nas bordas) ====== */
     .moldura-animada {
       position: absolute;
       inset: 0;
-      border-radius: 27px;
+      border-radius: 28px;
       pointer-events: none;
       background: conic-gradient(
         from 0deg,
@@ -949,16 +959,6 @@
       border-radius: 20px;
       background: #111; /* mesma cor do fundo do card */
       z-index: 2;
-    }
-
-    /* ====== BORDA DOURADA FIXA ====== */
-    .oferta-box::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: 25px;
-      border: 5px solid #d4af37;
-      z-index: 3;
     }
 
     @keyframes girarLuz {
@@ -1080,6 +1080,7 @@
 }
 ::-webkit-scrollbar-thumb { animation: scrollPulse 2.6s ease-in-out infinite; }
 </style>
+
 
 
 
