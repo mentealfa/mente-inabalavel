@@ -544,7 +544,8 @@
     if (btn) btn.addEventListener('click', (e) => { e.stopPropagation(); card.classList.remove('flipped'); });
   });
 </script>
-
+</section>
+  
   <!-- SEÇÃO 4 — DEPOIMENTOS -->
 <section id="depoimentos" style="background: linear-gradient(180deg, #0a0a0a, #111); color:#fff; padding:100px 5%; text-align:center; position:relative; overflow:hidden;">
 
@@ -580,66 +581,75 @@
 
   </div>
 
-<!-- PLAYER DE ÁUDIO PERSONALIZADO MENTE ALFA -->
-<div style="margin-top:80px; text-align:center; color:#d4af37; font-family:'Poppins', sans-serif;">
-  <h3 style="font-size:1.6rem; margin-bottom:25px; letter-spacing:1px;">
-    Ouça o que eles sentiram na transformação
-  </h3>
+  <!-- PLAYER DE ÁUDIO PERSONALIZADO MENTE ALFA -->
+  <div style="margin-top:80px; text-align:center; color:#d4af37; font-family:'Poppins', sans-serif;">
+    <h3 style="font-size:1.6rem; margin-bottom:25px; letter-spacing:1px;">
+      Ouça o que eles sentiram na transformação
+    </h3>
 
-  <div id="menteAlfaPlayer" style="
-    background: linear-gradient(145deg, #0a0a0a, #121212);
-    border: 1px solid rgba(212,175,55,0.3);
-    border-radius: 22px;
-    box-shadow: 0 0 25px rgba(212,175,55,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 25px;
-    width: 420px;
-    margin: auto;
-    position: relative;
-    overflow: hidden;
-  ">
-    <div class="glow" style="
-      content:'';
-      position:absolute;
-      inset:0;
-      border-radius:22px;
-      box-shadow:0 0 25px rgba(212,175,55,0.15);
-      animation: glowPulse 2.5s infinite alternate;
-      pointer-events:none;
-    "></div>
+    <div id="menteAlfaPlayer" style="
+      background: linear-gradient(145deg, #0a0a0a, #121212);
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 22px;
+      box-shadow: 0 0 25px rgba(212,175,55,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 25px;
+      width: 420px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    ">
+      <div class="glow" style="
+        content:'';
+        position:absolute;
+        inset:0;
+        border-radius:22px;
+        box-shadow:0 0 25px rgba(212,175,55,0.15);
+        animation: glowPulse 2.5s infinite alternate;
+        pointer-events:none;
+      "></div>
 
-    <button id="playPauseBtn" style="
-      background-color:#d4af37;
-      border:none;
-      width:60px;
-      height:60px;
-      border-radius:50%;
-      color:#000;
-      font-size:26px;
-      font-weight:bold;
-      cursor:pointer;
-      transition:all .3s ease;
-      z-index:1;
-      box-shadow:0 0 10px rgba(212,175,55,0.4);
-    ">▶</button>
+      <button id="playPauseBtn" style="
+        background-color:#d4af37;
+        border:none;
+        width:60px;
+        height:60px;
+        border-radius:50%;
+        color:#000;
+        font-size:26px;
+        font-weight:bold;
+        cursor:pointer;
+        transition:all .3s ease;
+        z-index:1;
+        box-shadow:0 0 10px rgba(212,175,55,0.4);
+      ">▶</button>
 
-    <div style="flex:1; margin:0 20px; z-index:1;">
-      <p style="margin-bottom:8px; font-size:0.95rem; color:#d4af37; font-weight:500;">
-        Depoimentos de alunos do grupo de networking do MI
-      </p>
-      <div style="height:6px; background:#333; border-radius:5px; overflow:hidden;">
-        <div id="progressBar" style="height:6px; width:0%; background:#d4af37; transition:width 0.1s;"></div>
+      <div style="flex:1; margin:0 20px; z-index:1;">
+        <p style="margin-bottom:8px; font-size:0.95rem; color:#d4af37; font-weight:500;">
+          Depoimentos de alunos do grupo de networking do MI
+        </p>
+        <div style="height:6px; background:#333; border-radius:5px; overflow:hidden;">
+          <div id="progressBar" style="height:6px; width:0%; background:#d4af37; transition:width 0.1s;"></div>
+        </div>
+        <p id="timeDisplay" style="margin-top:8px; font-size:0.8rem; color:#a88f2a;">00:00 / 00:00</p>
       </div>
-      <p id="timeDisplay" style="margin-top:8px; font-size:0.8rem; color:#a88f2a;">00:00 / 00:00</p>
-    </div>
 
-    <audio id="audio" src="https://res.cloudinary.com/deax6es7v/video/upload/v1762576601/depoimento-mente-inabalavel.mp3_twwfpm.mp3" type="audio/mp3"></audio>
+      <audio id="audio" src="https://res.cloudinary.com/deax6es7v/video/upload/v1762576601/depoimento-mente-inabalavel.mp3_twwfpm.mp3" type="audio/mp3"></audio>
+    </div>
   </div>
-</div>
+
+  <!-- MODAL DE IMAGEM -->
+  <div id="imgModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+</section>
 
 <style>
+  /* ---- PLAYER ---- */
   @keyframes glowPulse {
     0% { box-shadow: 0 0 10px rgba(212,175,55,0.2); }
     100% { box-shadow: 0 0 25px rgba(212,175,55,0.5); }
@@ -658,19 +668,124 @@
     0%, 100% { box-shadow: 0 0 15px rgba(212,175,55,0.5); transform: scale(1); }
     50% { box-shadow: 0 0 25px rgba(212,175,55,0.8); transform: scale(1.07); }
   }
+
+  /* ---- DEPOIMENTOS ---- */
+  .depo-card {
+    width: 280px;
+    height: 380px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(212,175,55,0.4);
+    box-shadow: 0 0 25px rgba(212,175,55,0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .depo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: all 0.4s ease;
+  }
+
+  .depo-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(212,175,55,0.7);
+  }
+
+  .depo-card:hover img {
+    filter: grayscale(0%);
+  }
+
+  /* ---- MODAL ---- */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.92);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .modal.show {
+    display: block;
+    opacity: 1;
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(212,175,55,0.5);
+    animation: zoomFadeIn 0.5s ease;
+  }
+
+  @keyframes zoomFadeIn {
+    0% { transform: scale(0.85); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #d4af37;
+    font-size: 45px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(212,175,55,0.8);
+  }
+
+  /* ---- CURSOR DOURADO ---- */
+  @media (hover: hover) and (pointer: fine) {
+    .gold-cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #d4af37;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: 0 0 20px rgba(212,175,55,0.6);
+      transform: translate(-50%, -50%);
+      transition: all 0.12s ease;
+      z-index: 9999;
+      mix-blend-mode: screen;
+    }
+  }
+
+  @media (max-width:768px) {
+    .depo-card {
+      width: 90%;
+      height: auto;
+    }
+  }
 </style>
 
 <script>
+  // ===== PLAYER =====
   const audio = document.getElementById('audio');
   const playPauseBtn = document.getElementById('playPauseBtn');
   const progressBar = document.getElementById('progressBar');
   const timeDisplay = document.getElementById('timeDisplay');
 
-  // Função de formatação de tempo
   function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
-    return ${minutes.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')};
+    return `${minutes.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
   }
 
   playPauseBtn.addEventListener('click', () => {
@@ -688,54 +803,57 @@
   audio.addEventListener('timeupdate', () => {
     const progress = (audio.currentTime / audio.duration) * 100;
     progressBar.style.width = progress + '%';
-    timeDisplay.textContent = ${formatTime(audio.currentTime)} / ${formatTime(audio.duration)};
+    timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
   });
 
   audio.addEventListener('ended', () => {
     playPauseBtn.textContent = '▶';
     playPauseBtn.classList.remove('playing');
   });
-</script>
 
-</section>
+  // ===== MODAL DE IMAGEM =====
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeModal = document.querySelector(".close");
+  const depoCards = document.querySelectorAll(".depo-card img");
 
-<style>
-.depo-card {
-  width: 280px;
-  height: 380px;
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-  border: 2px solid rgba(212,175,55,0.4);
-  box-shadow: 0 0 25px rgba(212,175,55,0.2);
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
+  depoCards.forEach(img => {
+    img.addEventListener("click", () => {
+      modal.classList.add("show");
+      modalImg.src = img.src;
+    });
+  });
 
-.depo-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(20%);
-  transition: all 0.4s ease;
-}
+  closeModal.onclick = () => {
+    modal.classList.remove("show");
+    setTimeout(() => modal.style.display = "none", 300);
+  };
 
-.depo-card:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 40px rgba(212,175,55,0.7);
-}
+  window.onclick = (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+      setTimeout(() => modal.style.display = "none", 300);
+    }
+  };
 
-.depo-card:hover img {
-  filter: grayscale(0%);
-}
+  // ===== CURSOR DOURADO (somente em desktop) =====
+  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    const cursor = document.createElement('div');
+    cursor.classList.add('gold-cursor');
+    document.body.appendChild(cursor);
 
-@media (max-width:768px) {
-  .depo-card {
-    width: 90%;
-    height: auto;
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+    });
+
+    const depoArea = document.querySelectorAll('.depo-card');
+    depoArea.forEach(area => {
+      area.addEventListener('mouseenter', () => cursor.style.boxShadow = '0 0 35px rgba(212,175,55,0.9)');
+      area.addEventListener('mouseleave', () => cursor.style.boxShadow = '0 0 20px rgba(212,175,55,0.6)');
+    });
   }
-}
-</style>
+</script>
 </section>
 
 
@@ -927,43 +1045,6 @@
   <p style="margin:0;">Mente Inabalável © 2025 — Todos os direitos reservados.</p>
 </footer>
 
-<!-- ===== EFEITO DO MOUSE: SOMBRA DOURADA (SOMENTE VISUAL; NÃO TROCA CURSOR PADRÃO FORA DO BODY) ===== -->
-<style>
-/* Se você já escondeu o cursor em outro lugar, remova body{cursor:none} para manter acessibilidade.
-   Aqui apenas adicionamos a sombra acompanhando o ponteiro. */
-.mouse-shadow {
-  position: fixed;
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(255,245,200,0.95) 0%, rgba(212,175,55,0.45) 35%, rgba(212,175,55,0.10) 60%, rgba(0,0,0,0) 100%);
-  mix-blend-mode: screen;
-  filter: blur(20px) saturate(1.2);
-  transition: transform 0.08s linear;
-  z-index: 9999;
-  opacity: 0.98;
-}
-</style>
-
-<div id="mouseShadow" class="mouse-shadow" aria-hidden="true"></div>
-
-<script>
-(function(){
-  const ms = document.getElementById('mouseShadow');
-  if(!ms) return;
-  document.addEventListener('mousemove', (e) => {
-    // small offset so it centers properly
-    ms.style.transform = `translate3d(${e.clientX - 34}px, ${e.clientY - 34}px, 0)`;
-  }, {passive:true});
-  // hide on touch devices
-  function isTouch() {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  }
-  if(isTouch()) ms.style.display = 'none';
-})();
-</script>
-
 <!-- ===== SCROLL DOURADO MELHORADO (brilho + animação leve) ===== -->
 <style>
 /* WebKit-based browsers (Chrome, Edge, Safari) */
@@ -991,6 +1072,7 @@
 }
 ::-webkit-scrollbar-thumb { animation: scrollPulse 2.6s ease-in-out infinite; }
 </style>
+
 
 
 
