@@ -42,11 +42,11 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)})(window,document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'XXXXXXXXXXXXXXXX'); // Substitua pelo seu Pixel ID
+  fbq('init', '1091704766218398'); // Substitua pelo seu Pixel ID
   fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXXX&ev=PageView&noscript=1"
+  src="https://www.facebook.com/tr?id=1091704766218398&ev=PageView&noscript=1"
 /></noscript>
 
 
@@ -545,17 +545,20 @@
   });
 </script>
 
-<!-- SEÇÃO 4 — DEPOIMENTOS -->
+<!-- SEÇÃO 4 — DEPOIMENTOS (versão aprimorada) -->
 <section id="depoimentos" style="background: linear-gradient(180deg, #0a0a0a, #111); color:#fff; padding:100px 5%; text-align:center; position:relative; overflow:hidden;">
-  <!-- BRILHO DOURADO DE FUNDO -->
-  <div style="position:absolute; top:-200px; left:50%; width:900px; height:900px; background:radial-gradient(circle, rgba(212,175,55,0.08), transparent 70%); transform:translateX(-50%); z-index:0; filter: blur(90px);"></div>
+
+  <!-- BRILHO DOURADO DE FUNDO CENTRAL -->
+  <div style="position:absolute; top:-200px; left:50%; width:900px; height:900px;
+              background:radial-gradient(circle, rgba(212,175,55,0.25), transparent 70%);
+              transform:translateX(-50%); z-index:0; filter: blur(120px);"></div>
 
   <h2 style="font-size:2.4rem; color:#d4af37; margin-bottom:60px; position:relative; z-index:2;">
     <span style="color:#fff;">Transformações reais de quem aplicou o</span> Mente Inabalável
   </h2>
 
   <!-- GRID DE DEPOIMENTOS -->
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; position:relative; z-index:2;">
+  <div class="depoimentos-grid" style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; position:relative; z-index:2;">
     <div class="depo-card">
       <img src="https://i.postimg.cc/bwcjFNKm/MI-2.png" alt="Depoimento 1">
     </div>
@@ -563,22 +566,34 @@
       <img src="https://i.postimg.cc/0QgW9b0T/MI-3.png" alt="Depoimento 2">
     </div>
     <div class="depo-card">
-      <img src="https://i.postimg.cc/WzpcwP7s/Screenshot-20251108-170904-Instagram.jpg" alt="Depoimento 3">
+      <img src="https://i.postimg.cc/C5bK7mZW/Design-sem-nome-43.png" alt="Depoimento 3">
     </div>
     <div class="depo-card">
       <img src="https://i.postimg.cc/9MM7Q2JR/Design-sem-nome-20251109-002519-0000.png" alt="Depoimento 4">
     </div>
   </div>
 
-  <!-- PLAYER DE ÁUDIO PERSONALIZADO MENTE ALFA -->
+  <!-- PLAYER DE ÁUDIO PERSONALIZADO -->
   <div style="margin-top:80px; text-align:center; color:#d4af37; font-family:'Poppins', sans-serif;">
-    <h3 style="font-size:1.6rem; margin-bottom:25px; letter-spacing:1px;">Ouça o que eles sentiram na transformação</h3>
+    <h3 style="font-size:1.6rem; margin-bottom:25px; letter-spacing:1px;">
+      Ouça o que eles sentiram na transformação
+    </h3>
 
-    <div id="menteAlfaPlayer" style="background: linear-gradient(145deg, #0a0a0a, #121212); border: 1px solid rgba(212,175,55,0.3); border-radius: 22px; box-shadow: 0 0 25px rgba(212,175,55,0.2); display: flex; align-items: center; justify-content: space-between; padding: 20px 25px; width: 420px; margin: auto; position: relative; overflow: hidden;">
-      <div class="glow" style="content:''; position:absolute; inset:0; border-radius:22px; box-shadow:0 0 25px rgba(212,175,55,0.15); animation: glowPulse 2.5s infinite alternate; pointer-events:none;"></div>
-      <button id="playPauseBtn" style="background-color:#d4af37; border:none; width:60px; height:60px; border-radius:50%; color:#000; font-size:26px; font-weight:bold; cursor:pointer; transition:all .3s ease; z-index:1; box-shadow:0 0 10px rgba(212,175,55,0.4);">▶</button>
+    <div id="menteAlfaPlayer" style="background: linear-gradient(145deg, #0a0a0a, #121212);
+      border: 1px solid rgba(212,175,55,0.3); border-radius: 22px;
+      box-shadow: 0 0 25px rgba(212,175,55,0.25);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 25px; width: 420px; margin: auto; position: relative; overflow: hidden;">
+      <div class="glow" style="content:''; position:absolute; inset:0; border-radius:22px;
+        box-shadow:0 0 25px rgba(212,175,55,0.15); animation: glowPulse 2.5s infinite alternate;
+        pointer-events:none;"></div>
+      <button id="playPauseBtn" style="background-color:#d4af37; border:none; width:60px; height:60px;
+        border-radius:50%; color:#000; font-size:26px; font-weight:bold; cursor:pointer;
+        transition:all .3s ease; z-index:1; box-shadow:0 0 10px rgba(212,175,55,0.4);">▶</button>
       <div style="flex:1; margin:0 20px; z-index:1;">
-        <p style="margin-bottom:8px; font-size:0.95rem; color:#d4af37; font-weight:500;">Depoimentos de alunos do grupo de networking do MI</p>
+        <p style="margin-bottom:8px; font-size:0.95rem; color:#d4af37; font-weight:500;">
+          Depoimentos de alunos do grupo de networking do MI
+        </p>
         <div style="height:6px; background:#333; border-radius:5px; overflow:hidden;">
           <div id="progressBar" style="height:6px; width:0%; background:#d4af37; transition:width 0.1s;"></div>
         </div>
@@ -588,14 +603,80 @@
     </div>
   </div>
 
+  <!-- ESTILOS EXTRAS -->
   <style>
-    @keyframes glowPulse { 0% { box-shadow:0 0 10px rgba(212,175,55,0.2); } 100% { box-shadow:0 0 25px rgba(212,175,55,0.5); } }
-    #playPauseBtn:hover { transform: scale(1.1); box-shadow:0 0 20px rgba(212,175,55,0.6); }
-    #playPauseBtn.playing { animation: pulseButton 1.8s infinite ease-in-out; }
-    @keyframes pulseButton { 0%,100%{ box-shadow:0 0 15px rgba(212,175,55,0.5); transform:scale(1);} 50%{ box-shadow:0 0 25px rgba(212,175,55,0.8); transform:scale(1.07);} }
+    /* ===== Animações gerais ===== */
+    @keyframes glowPulse {
+      0% { box-shadow:0 0 12px rgba(212,175,55,0.2); }
+      100% { box-shadow:0 0 30px rgba(212,175,55,0.5); }
+    }
+    #playPauseBtn:hover {
+      transform: scale(1.1);
+      box-shadow:0 0 20px rgba(212,175,55,0.6);
+    }
+    #playPauseBtn.playing {
+      animation: pulseButton 1.8s infinite ease-in-out;
+    }
+    @keyframes pulseButton {
+      0%,100%{ box-shadow:0 0 15px rgba(212,175,55,0.5); transform:scale(1);}
+      50%{ box-shadow:0 0 25px rgba(212,175,55,0.8); transform:scale(1.07);}
+    }
+
+    /* ===== Brilho dourado em volta dos depoimentos ===== */
+    .depo-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .depo-card img {
+      border-radius: 16px;
+      display: block;
+      width: 100%;
+      box-shadow: 0 0 18px rgba(212,175,55,0.25);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .depo-card:hover img {
+      transform: scale(1.03);
+      box-shadow: 0 0 35px rgba(255,215,0,0.45);
+    }
+    .depo-card::after {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: 20px;
+      background: radial-gradient(circle, rgba(255,215,0,0.4) 0%, rgba(212,175,55,0.1) 50%, transparent 100%);
+      filter: blur(10px);
+      opacity: 0.8;
+      pointer-events: none;
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+    @keyframes pulseGlow {
+      0%,100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    /* ===== Sombra dourada suave no cursor (somente desktop) ===== */
+    @media (hover: hover) and (pointer: fine) {
+      #mi-mouse-shadow {
+        position: fixed;
+        pointer-events: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255,215,0,0.6) 0%, rgba(212,175,55,0.25) 60%, transparent 100%);
+        filter: blur(6px);
+        mix-blend-mode: screen;
+        z-index: 9999;
+        transition: transform 0.08s linear, opacity 0.2s ease;
+        opacity: 0.9;
+      }
+    }
   </style>
 
+  <div id="mi-mouse-shadow" aria-hidden="true"></div>
+
   <script>
+    // Player de áudio
     const audio = document.getElementById('audio');
     const playPauseBtn = document.getElementById('playPauseBtn');
     const progressBar = document.getElementById('progressBar');
@@ -630,81 +711,24 @@
       playPauseBtn.textContent = '▶';
       playPauseBtn.classList.remove('playing');
     });
-  </script>
 
-  <!-- =========================
-       MOUSE GOLD SHADOW (somente nesta seção)
-       cria um elemento que segue o cursor e aparece enquanto o mouse está sobre #depoimentos
-       ========================= -->
-  <style>
-    /* cursor shadow element */
-#mi-mouse-shadow {
-  position: fixed;
-  pointer-events: none;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
-  mix-blend-mode: screen;
-  transition: transform 0.12s ease-out, opacity 0.12s linear;
-  opacity: 0;
-  z-index: 9999;
-  background: radial-gradient(circle, rgba(255,215,0,0.9) 0%, rgba(212,175,55,0.6) 40%, rgba(0,0,0,0) 70%);
-  box-shadow: 0 0 50px rgba(255,215,0,0.6);
-}
-
-  </style>
-  <div id="mi-mouse-shadow" aria-hidden="true"></div>
-
-  <script>
+    // Cursor dourado sutil
     (function(){
-      const section = document.getElementById('depoimentos');
-      const shadow = document.getElementById('mi-mouse-shadow');
-      if(!section || !shadow) return;
-
-      let isOver = false;
-      let raf;
-      let mouseX = 0, mouseY = 0, curX = 0, curY = 0;
-
-      function onMove(e){
-        const ev = e.touches ? e.touches[0] : e;
-        mouseX = ev.clientX;
-        mouseY = ev.clientY;
-        if(!isOver) return;
-        shadow.style.opacity = 1;
+      const ms = document.getElementById('mi-mouse-shadow');
+      if(!ms) return;
+      function isTouch() {
+        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
       }
+      if(isTouch()) { ms.remove(); return; }
 
-      function update(){
-        // lerp for smooth follow
-        curX += (mouseX - curX) * 0.22;
-        curY += (mouseY - curY) * 0.22;
-        shadow.style.left = curX + 'px';
-        shadow.style.top = curY + 'px';
-        raf = requestAnimationFrame(update);
-      }
-
-      section.addEventListener('mouseenter', (e) => {
-        isOver = true;
-        shadow.style.opacity = 1;
-        onMove(e);
-        if(!raf) raf = requestAnimationFrame(update);
-      });
-      section.addEventListener('mousemove', onMove);
-      section.addEventListener('touchstart', (e) => { onMove(e); isOver = true; shadow.style.opacity = 1; if(!raf) raf = requestAnimationFrame(update); }, {passive:true});
-      section.addEventListener('mouseleave', () => {
-        isOver = false;
-        shadow.style.opacity = 0;
-      });
-      section.addEventListener('touchend', () => { isOver = false; shadow.style.opacity = 0; });
-
-      // hide on scroll outside area quickly
-      window.addEventListener('scroll', () => {
-        if(!isOver) shadow.style.opacity = 0;
+      document.addEventListener('mousemove', (e) => {
+        ms.style.transform = `translate3d(${e.clientX - 17}px, ${e.clientY - 17}px, 0)`;
       }, {passive:true});
     })();
   </script>
 
 </section>
+
 
 <!-- ===== PARTE 2 (SEÇÕES 5, 6, 7 + RODAPÉ + MOUSE SHADOW + SCROLL) ===== -->
 
@@ -958,6 +982,7 @@
 }
 ::-webkit-scrollbar-thumb { animation: scrollPulse 2.6s ease-in-out infinite; }
 </style>
+
 
 
 
